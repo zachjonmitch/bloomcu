@@ -1,0 +1,463 @@
+//--------------------------------------------------------------
+// MAIN NAVIGATION
+//--------------------------------------------------------------
+
+.navigation {
+	background: $color-white;
+	bottom: 0;
+	display: none;
+	font-family: $font-aktiv-grotesk-medium;
+	height: calc(100vh - 152px);
+	left: 0;
+	-webkit-overflow-scrolling: touch;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	position: fixed;
+	right: 0;
+	top: 80px;
+	width: 100%;
+	z-index: 1000;
+
+	@include mq($mq-full) {
+		background: transparent;
+		bottom: auto;
+		display: flex;
+		height: auto;
+		justify-content: flex-end;
+		left: initial;
+		overflow-x: visible;
+		overflow-y: visible;
+		padding: 0 0 20px;
+		position: relative;
+		right: initial;
+		top: auto;
+		width: initial;
+	}
+	@include mq($mq-laptop-medium) {
+		padding: 20px 0;
+	}
+
+	&.is-active {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+
+//-----------------------------------------
+// Back Button
+//-----------------------------------------
+.navigation {
+	&__back {
+		background: $color-white;
+		border: none;
+		display: none;
+		font-family: $font-aktiv-grotesk-light;
+		font-size: rem-calc(24);
+		left: 0;
+		padding: 13px 30px 13px 55px;
+		position: fixed;
+		right: 0;
+		text-align: left;
+		top: 68px;
+		width: 100%;
+		z-index: 10000;
+
+		@include mq($mq-full) {
+			display: none;
+		}
+
+		.fa-angle-left {
+			height: 29px;
+			left: 20px;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 20px;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Main Nav
+//-----------------------------------------
+.nav-main {
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.25s ease-in-out;
+	width: 100%;
+
+	@include mq($mq-full) {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		margin-top: 0;
+		position: initial;
+		transform: none !important;
+		width: initial;
+	}
+}
+
+
+//-----------------------------------------
+// Mobile Link and Buttons
+//-----------------------------------------
+.nav-main {
+	.menu-item {
+		a,
+		button {
+			@include mq($mq-full, true, false) {
+				color: $color-primary;
+				display: block;
+				font-size: rem-calc(24);
+				padding: 15px 20px 15px 44px;
+				position: relative;
+				text-align: left;
+				width: 100%;
+			}
+
+			&:focus {
+				outline: 1px dotted $color-primary;
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Main Nav Items
+// Top Level
+//-----------------------------------------
+.nav-main {
+	// Menu Item Arrows
+	.fa-angle-right {
+		display: none;
+		// height: 24px;
+		// position: absolute;
+		// right: 24px;
+		// top: 50%;
+		// transform: translateY(-50%);
+		// transition: transform 300ms ease-in-out;
+		// width: 14px;
+
+		// @include mq($mq-full) {
+		// 	display: none;
+		// }
+	}
+
+	& > .menu-item {
+		color: $color-primary;
+
+		@include mq($mq-full) {
+			border: 0;
+			border: none;
+			display: inline-block;
+			font-size: rem-calc(20);
+			line-height: 1;
+			margin: 0 20px;
+			padding: 0;
+			position: relative;
+			white-space: nowrap;
+			width: auto;
+		}
+
+		& > a,
+		& > button {
+			display: block;
+			position: relative;
+			text-align: left;
+			width: 100%;
+
+			@include mq($mq-full) {
+				padding: 5px;
+			}
+
+			// Nav is open
+			.nav-active & {
+				@include mq($mq-full) {
+					opacity: 0.5;
+				}
+			}
+
+			&:focus {
+				outline: 1px dotted $color-primary;
+			}
+		}
+
+		// Active Item
+		&.is-active,
+		&.is-current {
+			@extend %nav-dropdown-arrow;
+
+			& > button,
+			& > a {
+				@include mq($mq-full) {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Sub Nav Level 1
+//-----------------------------------------
+.nav-main {
+	.sub-menu-level-1 {
+		background-color: $color-white;
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 50px;
+		transform: translateX(100%);
+		width: 100%;
+
+		@include mq($mq-full) {
+			animation: base-fade-in 200ms ease-out;
+			background-color: $color-secondary-light;
+			left: 50%;
+			right: auto;
+			top: calc(100% + 14px);
+			transform: translateX(-50%);
+			transition: opacity 0.25s ease-in;
+			width: auto;
+			z-index: 2;
+		}
+
+		&.is-active {
+			display: block;
+		}
+
+		// Single layer
+		&:not(.has-children-with-children) {
+			@include mq($mq-full) {
+				padding: 40px 20px;
+			}
+		}
+
+		// Sub level 1 has items that have their own children items
+		&.has-children-with-children {
+			@include mq($mq-full) {
+				left: -210px;
+				transform: none;
+			}
+
+			&.menu-child-count-1,
+			&.menu-child-count-2 {
+				@include mq($mq-full) {
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
+
+			&.is-active {
+				@include mq($mq-full) {
+					display: flex;
+				}
+			}
+
+			// Adjust sub menu based on location information from detect edge js
+			&.right-edge {
+				@include mq($mq-full) {
+					left: initial;
+					right: -275px;
+				}
+				@include mq(1040px) {
+					right: -210px;
+				}
+			}
+
+			&.left-edge {
+				@include mq($mq-full) {
+					left: -140px;
+				}
+			}
+
+			& > li {
+				@include mq($mq-full) {
+					padding: 40px 0;
+				}
+			}
+		}
+
+		// Spacing for all list items that are not parents
+		li:not(.is-parent):not(:last-child) {
+			@include mq($mq-full) {
+				margin-bottom: 27px;
+			}
+		}
+
+		// Direct Children
+		& > li {
+			@include mq($mq-full) {
+				background-color: $color-white;
+				box-shadow: 5px 0 8px 0 rgba(51,51,51,0.3); // IE only
+				display: flex;
+				flex-direction: column;
+				text-align: left;
+			}
+
+			@supports (grid-area: auto) {
+				box-shadow: 0 0 0 0 rgba(51,51,51,0) !important;
+			}
+
+			&:first-child {
+				@include mq($mq-full) {
+					border-radius: 5px 0 0 5px;
+				}
+			}
+
+			&:last-child {
+				@include mq($mq-full) {
+					border-radius: 0 5px 5px 0;
+				}
+			}
+
+			& > .sub-menu {
+				@include mq($mq-full) {
+					flex-grow: 1;
+				}
+
+				.menu-item {
+					@include mq($mq-full) {
+						flex-grow: 1;
+						padding: 0 50px;
+					}
+				}
+			}
+
+			&:not(:last-child) {
+				& > ul.sub-menu {
+					@include mq($mq-full) {
+						border-right: 2px solid $color-primary-light;
+					}
+				}
+			}
+
+			a {
+				color: $color-primary;
+				display: block;
+				position: relative;
+				text-align: left;
+				width: 100%;
+
+				@include mq($mq-full) {
+					border: 0;
+					font-size: rem-calc(16);
+					padding: 0;
+				}
+			}
+		}
+	}
+
+	// First level sub menus
+	& > .menu-item > .is-parent-trigger-level-1 + .sub-menu-level-1 {
+		@include mq($mq-full) {
+			border-radius: 5px;
+		}
+		@include mq($mq-full) {
+			@supports (grid-area: auto) {
+				box-shadow: 0 0 8px 0 rgba(51,51,51,0.3);
+			}
+		}
+	}
+
+	// Adjust children near the right so they do not float outside window
+	.menu-item {
+		&:nth-child(3) ~ .menu-item {
+			.sub-menu-level-1 {
+				@include mq($mq-full) {
+					left: initial;
+					right: -210px;
+				}
+			}
+		}
+
+		&:last-child {
+			.sub-menu-level-1 {
+				@include mq($mq-full) {
+					left: initial;
+					right: 15px;
+				}
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Sub Nav Level 2
+//-----------------------------------------
+.nav-main {
+	.sub-menu {
+		& > .menu-item {
+			& > .is-parent-trigger {
+				position: relative;
+				text-align: left;
+
+				@include mq($mq-full) {
+					border: 0;
+					color: $color-tertiary;
+					cursor: default;
+					display: block;
+					font-family: $font-aktiv-grotesk-light;
+					font-size: rem-calc(22);
+					font-weight: normal;
+					margin-bottom: 30px;
+					padding: 0 50px;
+					pointer-events: none;
+				}
+
+				&:focus {
+					color: $color-secondary;
+
+					.fa-angle-right {
+						color: $color-secondary;
+					}
+				}
+			}
+
+			& > .sub-menu {
+				display: none;
+				position: absolute;
+				right: 0;
+				top: 0;
+				transform: translateX(100%);
+				width: 100%;
+
+				@include mq($mq-full) {
+					display: block;
+					padding: 0;
+					position: static;
+					right: auto;
+					top: auto;
+					transform: none;
+					width: auto;
+				}
+
+				&.is-active {
+					display: block;
+				}
+
+				button,
+				a {
+					@include mq($mq-full, true, false) {
+						font-size: rem-calc(20);
+					}
+				}
+			}
+		}
+	}
+}
+
+// <body>
+// Disable body scroll on mobile
+.nav-active {
+	@include mq($mq-full, true, false) {
+		height: 100%;
+		overflow: hidden;
+	}
+}

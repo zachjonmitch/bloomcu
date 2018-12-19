@@ -1,0 +1,45 @@
+//--------------------------------------------------------------
+// PAUSE/PLAY
+//--------------------------------------------------------------
+// <button>
+.c-pause-play {
+	$self: &;
+
+	align-items: center;
+	color: $color-white;
+	display: flex;
+	text-align: left;
+
+	&:hover {
+		color: $color-secondary;
+	}
+
+	&:focus {
+		outline: 1px dotted $color-white;
+	}
+
+	&__icons {
+		margin-right: 10px;
+		max-width: 16px;
+		overflow: visible;
+	}
+
+	&__icon {
+		&--pause {
+			display: none;
+		}
+	}
+
+	// Playing state
+	&.is-playing {
+		#{$self}__icon {
+			&--play {
+				display: none;
+			}
+
+			&--pause {
+				display: block;
+			}
+		}
+	}
+}

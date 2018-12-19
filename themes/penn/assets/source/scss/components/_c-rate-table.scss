@@ -1,0 +1,197 @@
+//--------------------------------------------------------------
+// RATE TABLE
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// title
+//-----------------------------------------
+.c-rate-table__title {
+	font-size: rem-calc(32);
+	margin: 20px 0;
+
+	@include mq($mq-tablet, $min: false) {
+		background: $color-primary;
+		color: $color-white !important;
+		font-size: rem-calc(22);
+		line-height: 28px;
+		margin: 0;
+		padding: 30px 20px;
+	}
+
+	.sub-text {
+		display: none;
+
+		@include mq($mq-tablet, $min: false) {
+			display: block;
+			font-size: 0.9rem;
+		}
+	}
+}
+
+//-----------------------------------------
+// basic styles
+//-----------------------------------------
+.c-rate-table {
+	margin-top: 40px;
+	padding-bottom: 60px;
+
+	@include mq($mq-tablet, $min: false) {
+		margin-left: 20px;
+		margin-right: 20px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	//-----------------------------------------
+	// table head row
+	//-----------------------------------------
+	thead {
+		@include mq($mq-tablet) {
+			border-bottom: 3px solid $color-primary-light;
+			height: 40px;
+			text-align: left;
+		}
+		@include mq($mq-tablet, $min: false) {
+			display: block;
+			margin-left: -20px;
+			margin-right: -20px;
+		}
+
+		th {
+			color: $color-tertiary-light;
+			font-family: $font-aktiv-grotesk-medium;
+			font-size: rem-calc(18);
+			font-weight: $font-weight-normal;
+			height: 40px;
+			padding: 6px 1px 13px 0;
+
+			@include mq($mq-tablet, $min: false) {
+				display: none;
+			}
+		}
+	}
+
+	tbody {
+		td[data-th='Term'] {
+			font-size: rem-calc(24);
+			line-height: 29px;
+			min-width: 180px;
+
+			@include mq($mq-tablet, $min: false) {
+				font-size: rem-calc(18);
+			}
+		}
+
+		td[data-th='APR* as low as'] {
+			color: $color-primary;
+			font-size: rem-calc(22);
+			line-height: 42px;
+
+			@include mq($mq-tablet, $min: false) {
+				font-size: rem-calc(26);
+				line-height: 34px;
+			}
+		}
+
+		td[data-th='APR* as low as'],
+		td[data-th='Term'],
+		td[data-th='Type'] {
+			&::before {
+				@include mq($mq-tablet, $min: false) {
+					content: attr(data-th);
+					display: block;
+					font-size: rem-calc(15);
+					line-height: 21px;
+					margin-bottom: 5px;
+				}
+			}
+		}
+
+		td[data-th='Type'] {
+			font-size: rem-calc(24);
+			line-height: 34px;
+			min-width: 210px;
+
+			@include mq($mq-tablet, $min: false) {
+				border-left: 2px solid transparent;
+				border-right: 2px solid transparent;
+				border-top: 2px solid transparent;
+				color: $color-secondary;
+				font-size: rem-calc(22);
+				line-height: 28px;
+			}
+
+			&::before {
+				@include mq($mq-tablet, $min: false) {
+					color: $color-secondary;
+				}
+			}
+		}
+
+		td[data-th=''] {
+			@include mq($mq-tablet, $min: false) {
+				border-bottom: 3px solid $color-primary-light;
+				margin-bottom: 40px;
+			}
+		}
+
+		td .button {
+			display: block;
+			font-size: rem-calc(20);
+			height: 55px;
+			line-height: 29px;
+			margin-bottom: 0;
+			margin-left: auto;
+			padding: 10px;
+			width: 165px;
+
+			@include mq($mq-tablet, $min: false) {
+				margin-left: 0;
+				margin-right: auto;
+			}
+		}
+
+		tr {
+			background: transparent;
+			border-bottom: 3px solid $color-borders;
+		}
+
+		td {
+			font-weight: $font-weight-normal;
+			padding: 28px 1px 28px 0;
+
+			@include mq($mq-tablet, $min: false) {
+				border-left: 2px solid $color-borders;
+				border-right: 2px solid $color-borders;
+				border-top: 2px solid $color-borders;
+				display: block;
+				padding: 28px 1px 28px 14px;
+				width: 100%;
+			}
+		}
+	}
+
+	.table-note {
+		@include mq($mq-tablet, $min: false) {
+			// margin-top: -30px;
+			border: 2px solid $color-borders;
+			padding: 10px 15px;
+		}
+
+		// Rates Disclosure Trigger
+		& > button {
+			color: $color-gray;
+			font-size: rem-calc(16);
+
+			@include mq($mq-tablet) {
+				margin: 20px 0;
+				padding-left: 10px;
+			}
+		}
+
+		p {
+			color: $color-gray;
+			margin-bottom: 10px;
+		}
+	}
+}

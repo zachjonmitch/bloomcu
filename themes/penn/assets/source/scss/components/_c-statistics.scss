@@ -1,0 +1,80 @@
+//--------------------------------------------------------------
+// Statistics
+//--------------------------------------------------------------
+.c-statistics {
+	background: url(../images/pattern.png);
+	overflow: hidden;
+	padding: 60px 20px 40px;
+	position: relative;
+	text-align: center;
+
+	@include mq($mq-full) {
+		padding: 150px 20px 40px;
+	}
+	@include mq(1300px) {
+		padding: 200px 20px 40px;
+	}
+
+	&::before {
+		background-color: $color-white;
+		display: block;
+		height: 13vw;
+		left: 0;
+		perspective: 1000px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transform: skewY(3deg) translateY(-50%);
+		transform-origin: 0;
+		width: 100%;
+
+		@include mq($mq-full) {
+			content: '';
+		}
+	}
+
+	& > * {
+		color: $color-white;
+		font-family: $font-aktiv-grotesk-light;
+		font-weight: 300;
+	}
+
+	&__angle {
+		background: url(../images/angle-top.svg);
+		background-size: 300% 100%;
+		left: 0;
+		min-height: 60px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transform: translateY(-1px);
+
+		@include mq($mq-medium) {
+			background-size: 200% 100%;
+		}
+		@include mq($mq-full) {
+			background-size: 100% 100%;
+		}
+	}
+
+	&__stat {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 160px;
+
+		@include mq($mq-full) {
+			min-height: 260px;
+		}
+		@include mq($mq-full, $min: false) {
+			.h2 {
+				font-size: rem-calc(48);
+			}
+
+			.h5 {
+				font-size: rem-calc(18);
+			}
+		}
+	}
+}

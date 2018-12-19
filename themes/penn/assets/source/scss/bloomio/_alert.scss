@@ -1,0 +1,65 @@
+.bloomio-alert-wrap {
+    color: #000;
+    font-size: 15px;
+    line-height: 23px;
+    padding: 2rem;
+    box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, .11);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 3;
+
+    @include mq($mq-laptop) {
+        padding: 4rem;
+    }
+  
+}
+.bloomio-alert-inner {
+    margin-bottom: 12px;
+}
+  
+.bloomio-alert-inner a {
+    outline: none;
+    line-height: 1;
+    display: inline-block;
+}
+  
+.bloomio-alert-wrap .bloomio-alert-title{
+    color: #000000;
+    // font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    // line-height: 32px;
+    padding-top: 1.2rem;
+}
+  
+.btn-alert-action {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    float: left;
+}
+
+.btn-alert-action, .btn-alert-close  {
+    max-width: 270px;
+    margin: 35px 0 0;
+}
+
+.btn-alert-close {
+    outline: none;
+    line-height: 1;
+    display: inline-block;
+}
+.button {
+&.btn-alert-close {
+    background-color: transparent;
+    color: $color-black;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+}
+.bloomio-alert-desc {
+    padding: 10px 0;
+}

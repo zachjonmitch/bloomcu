@@ -1,0 +1,28 @@
+//--------------------------------------------------------------
+// Accessibility
+//
+// Mixins to help with accessibility.
+//--------------------------------------------------------------
+
+// Hide visually but allows for screen readers to access it.
+@mixin visual-hide {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+// Occasionally there is a need to reverse the above.
+@mixin reverse-visual-hide {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	padding: 0;
+	position: static;
+	width: auto;
+}

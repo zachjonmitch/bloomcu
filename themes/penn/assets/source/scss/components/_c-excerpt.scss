@@ -1,0 +1,84 @@
+//--------------------------------------------------------------
+// EXCERPT
+//--------------------------------------------------------------
+.c-excerpt {
+	$self: &;
+
+	background: #FCFCFA;
+	border-radius: 10px;
+	box-shadow: 0 0 8px 0 rgba(51,51,51,0.3);
+	display: block;
+	margin: 0 auto;
+	max-width: 300px;
+	min-height: 100%;
+	padding: 17px 25px 70px;
+	position: relative;
+	width: 100%;
+
+	@include mq($mq-medium) {
+		max-width: 500px;
+	}
+	@include mq($mq-full) {
+		max-width: 100%;
+		padding: 40px 25px 80px;
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 0 16px 0 rgba(51,51,51,0.3);
+	}
+
+	&__main-title {
+		font-family: $font-aktiv-grotesk-light;
+		margin-bottom: 60px;
+
+		@include mq($mq-full) {
+			font-size: rem-calc(48);
+			margin-bottom: 80px;
+		}
+	}
+
+	&__title {
+		color: $color-primary;
+		font-family: $font-aktiv-grotesk-light;
+		font-size: rem-calc(20);
+		font-weight: 300;
+		margin-bottom: 7px;
+		text-align: center;
+
+		@include mq($mq-full) {
+			font-size: rem-calc(24);
+			margin-bottom: 30px;
+		}
+	}
+
+	&__description {
+		color: #666666;
+		font-size: rem-calc(16);
+
+		@include mq($mq-full) {
+			font-size: rem-calc(18);
+		}
+	}
+
+	&__button {
+		align-items: center;
+		bottom: 26px;
+		color: $color-white;
+		display: flex;
+		left: 25px;
+		position: absolute;
+
+		@include mq($mq-full) {
+			font-size: rem-calc(20);
+		}
+
+		// Icon
+		svg {
+			color: $color-secondary;
+			font-size: rem-calc(34);
+			margin-left: 15px;
+			transition: transform 300ms ease-in;
+		}
+	}
+}

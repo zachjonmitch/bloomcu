@@ -1,0 +1,54 @@
+//--------------------------------------------------------------
+// HOMEPAGE FEATURES LIST CONTAINER
+//--------------------------------------------------------------
+.l-features-home {
+	background-color: $color-primary-medium;
+	overflow: hidden;
+	padding: 0 20px;
+	position: relative;
+
+	&__facade {
+		@include mq($mq-tablet) {
+			background-color: $color-white;
+			height: 75px;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 100%;
+		}
+	}
+
+	&__content {
+		margin: 0 auto;
+		max-width: $global-width;
+		position: relative;
+		z-index: 1;
+
+		@include mq($mq-tablet) {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	// Title
+	&__left {
+		padding: 27px 0 62px;
+
+		@include mq($mq-tablet) {
+			max-width: 495px;
+			padding: 150px 20px 0 0;
+			padding-right: 20px;
+		}
+	}
+
+	// Link List
+	&__right {
+		@include mq($mq-tablet) {
+			max-width: 500px;
+		}
+		@include mq($mq-full) {
+			width: 100%;
+		}
+	}
+}

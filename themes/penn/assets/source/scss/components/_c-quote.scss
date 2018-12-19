@@ -1,0 +1,99 @@
+//--------------------------------------------------------------
+// QUOTE BLOCK
+//--------------------------------------------------------------
+.c-quote {
+	margin: 40px auto 50px;
+	max-width: 1440px;
+
+	@include mq($mq-full) {
+		margin-top: 122px;
+	}
+}
+
+
+//-----------------------------------------
+// Title
+//-----------------------------------------
+.c-quote {
+	&__title {
+		color: $color-tertiary;
+		font-family: $font-aktiv-grotesk-bold;
+		font-size: rem-calc(28);
+		line-height: rem-calc(46);
+		margin-bottom: 42px;
+		position: relative;
+
+		@include mq($mq-full) {
+			font-size: rem-calc(60);
+			line-height: rem-calc(90);
+		}
+
+		& > span {
+			background-color: $color-secondary-medium;
+			box-decoration-break: clone;
+			padding: 0 5px 5px 20px;
+
+			@include mq($mq-tablet) {
+				padding: 0 5px 2px 9vw;
+			}
+			@include mq(1440px) {
+				padding-left: 130px;
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Description
+//-----------------------------------------
+.c-quote {
+	&__description {
+		padding: 0 20px;
+
+		@include mq($mq-tablet) {
+			max-width: 600px;
+			padding: 0;
+		}
+		@include mq($mq-full) {
+			font-size: rem-calc(24);
+		}
+	}
+
+	&__description-wrapper {
+		@include mq($mq-tablet) {
+			margin-left: 9%;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Link
+//-----------------------------------------
+.c-quote {
+	&__link-wrapper {
+		margin-top: 48px;
+		padding: 0 20px;
+		text-align: right;
+
+		@include mq($mq-full) {
+			margin-right: 20%;
+			padding: 0;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Modifiers
+//-----------------------------------------
+.c-quote {
+	&--indent-description {
+		.c-quote__description-wrapper {
+			@include mq($mq-tablet) {
+				margin-left: 14%;
+			}
+		}
+	}
+}

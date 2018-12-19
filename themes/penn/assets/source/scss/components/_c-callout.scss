@@ -1,0 +1,254 @@
+//--------------------------------------------------------------
+// Callout
+//--------------------------------------------------------------
+.c-callout {
+	background-color: $color-primary;
+	padding: 90px 20px 114px;
+	position: relative;
+	text-align: center;
+
+	@include mq($mq-full) {
+		padding: 146px 20px 170px;
+	}
+
+	&__overlay {
+		background-color: #0A1D3C;
+		opacity: 0.5;
+	}
+
+	&--margin-bottom {
+		margin-bottom: 90px;
+
+		@include mq($mq-full) {
+			margin-bottom: 130px;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Inner Content
+//-----------------------------------------
+.c-callout {
+	&__content {
+		color: $color-white;
+		display: block;
+		margin: 0 auto;
+		max-width: 840px;
+		position: relative;
+		z-index: 1;
+	}
+
+	&__header {
+		font-family: $font-aktiv-grotesk-medium;
+		font-size: rem-calc(32);
+
+		@include mq($mq-full) {
+			font-family: $font-aktiv-grotesk-bold;
+			font-size: rem-calc(60);
+		}
+	}
+
+	&__sub-header {
+		font-style: normal;
+		margin-top: 20px;
+
+		@include mq($mq-full) {
+			font-size: rem-calc(24);
+		}
+	}
+
+	&__link {
+		margin-top: 62px;
+	}
+}
+
+
+
+//-----------------------------------------
+// Skew Shape modifier
+//-----------------------------------------
+.c-callout {
+	&--skew-bottom {
+		overflow: hidden;
+
+		&::after {
+			background-color: $color-white;
+			display: block;
+			height: 13vw;
+			left: 0;
+			perspective: 1000px;
+			position: absolute;
+			right: 0;
+			top: 100%;
+			transform: skewY(3deg) translateY(-50%);
+			transform-origin: 0;
+			width: 100%;
+
+			@include mq($mq-full) {
+				content: '';
+			}
+		}
+	}
+}
+
+//--------------------------------------------------------------
+// Testimonial Modifiers
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Standard
+//-----------------------------------------
+.c-callout {
+	$self: &;
+
+	&--testimonial {
+		padding: 80px 20px 120px;
+
+		@include mq($mq-full) {
+			padding: 180px 20px 210px;
+		}
+
+		#{ $self }__content {
+			max-width: 770px;
+		}
+
+		#{ $self }__header {
+			color: $color-white;
+			display: block;
+			font-family: $font-aktiv-grotesk-light;
+			font-size: rem-calc(28);
+			line-height: rem-calc(40);
+			quotes: '“' '”' '‘' '’';
+
+			@include mq($mq-full) {
+				font-size: rem-calc(48);
+				line-height: rem-calc(64);
+				position: relative;
+			}
+
+			&::before,
+			&::after {
+				color: $color-secondary;
+				content: '';
+				display: inline-block;
+				font-family: $font-aktiv-grotesk-medium;
+				transform: scale(1.9) translateY(15%);
+
+				@include mq($mq-full) {
+					transform: scale(2.3) translateY(15%);
+				}
+			}
+
+			&::before {
+				content: open-quote;
+				margin-right: 8px;
+
+				@include mq($mq-full) {
+					margin-right: 25px;
+				}
+			}
+
+			&::after {
+				content: close-quote;
+				margin-left: 10px;
+
+				@include mq($mq-full) {
+					margin-left: 25px;
+				}
+			}
+		}
+
+		#{ $self }__sub-header {
+			color: $color-secondary;
+			display: block;
+			font-family: $font-aktiv-grotesk-medium;
+			font-size: rem-calc(20);
+			margin-top: 45px;
+
+			@include mq($mq-full) {
+				font-size: rem-calc(24);
+				margin-top: 65px;
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Homepage
+// Extends the standard testimonial
+//-----------------------------------------
+.c-callout {
+	$self: &;
+
+	&--testimonial-home {
+		@extend .c-callout--testimonial;
+
+		background: linear-gradient(180deg, #F5F8FC 0%, #F0F3F7 64.28%, #C7D6ED 100%);
+		overflow: hidden;
+		padding: 60px 20px 310px;
+
+		@include mq($mq-full) {
+			padding: 234px 20px 255px;
+		}
+
+		&::after {
+			background-color: $color-primary;
+			bottom: 0;
+			content: '';
+			display: block;
+			height: 13vw;
+			left: 0;
+			perspective: 1000px;
+			position: absolute;
+			right: 0;
+			transform: skewY(-3deg) translateY(100%);
+			transform-origin: 0;
+			width: 100%;
+		}
+
+		#{ $self }__content {
+			max-width: 840px;
+		}
+
+		#{ $self }__header {
+			color: $color-tertiary-medium;
+
+			&::before,
+			&::after {
+				color: $color-primary;
+				opacity: 0.3;
+
+				@include mq($mq-full) {
+					bottom: calc(100% - 2.8rem);
+					display: block;
+					font-size: rem-calc(120);
+					line-height: 0;
+					position: absolute;
+					transform: none;
+				}
+			}
+
+			&::before {
+				@include mq($mq-full) {
+					left: 0;
+					margin-left: -50px;
+					margin-right: 0;
+				}
+			}
+
+			&::after {
+				@include mq($mq-full) {
+					margin-left: 0;
+					margin-right: -50px;
+					right: 0;
+				}
+			}
+		}
+
+		#{ $self }__sub-header {
+			color: $color-primary;
+		}
+	}
+}

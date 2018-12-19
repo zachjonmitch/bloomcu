@@ -1,0 +1,231 @@
+//--------------------------------------------------------------
+// ELEMENTS
+//--------------------------------------------------------------
+
+html {
+	background-color: $color-white;
+}
+
+body {
+	background: $color-white;
+	color: $color-black;
+	font: {
+		family: $font-family-body;
+		size: $font-size-content;
+		weight: $font-weight-normal;
+	};
+	line-height: 1.5;
+}
+
+
+//-----------------------------------------
+// Paragraph
+//-----------------------------------------
+p {
+	font-size: $font-size-content;
+}
+
+
+//-----------------------------------------
+// List
+//-----------------------------------------
+ul,
+ol,
+dl {
+	font-size: $font-size-content;
+}
+
+// Unordered List
+ul {
+}
+
+// Ordered List
+ol {
+}
+
+// Definition List
+dl {
+}
+
+
+//-----------------------------------------
+// List Item
+//-----------------------------------------
+li {
+}
+
+// Unordered List Item
+ul {
+	li {
+	}
+}
+
+// Ordered List Item
+ol {
+	li {
+	}
+}
+
+// Definition List
+dl {
+	// Definition Term
+	dt {
+	}
+
+	// Definition Name
+	dd {
+	}
+}
+
+
+//-----------------------------------------
+// Blockquote
+//-----------------------------------------
+blockquote {
+}
+
+
+//-----------------------------------------
+// Cite
+//-----------------------------------------
+cite {
+}
+
+
+//-----------------------------------------
+// Horizontal Rule
+//-----------------------------------------
+hr {
+	border-top: 1px solid $color-gray;
+}
+
+
+//-----------------------------------------
+// Table
+//-----------------------------------------
+table {
+	border-collapse: collapse;
+	margin-bottom: 25px;
+	width: 100%;
+}
+
+
+//-----------------------------------------
+// Anchor
+//-----------------------------------------
+a {
+	@include transition;
+
+	color: inherit;
+	cursor: pointer;
+	outline: 0;
+	text-decoration: none;
+
+	&:focus {
+		outline: 1px dotted;
+	}
+}
+
+
+//-----------------------------------------
+// Button
+//-----------------------------------------
+button {
+	appearance: none;
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+}
+
+
+//-----------------------------------------
+// Image
+//-----------------------------------------
+img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+//-----------------------------------------
+// Strong Importance
+// For SEO usage.
+//-----------------------------------------
+strong {
+	font-family: $font-aktiv-grotesk-bold;
+}
+
+
+//-----------------------------------------
+// Bold
+//-----------------------------------------
+b {
+	font-family: $font-aktiv-grotesk-bold;
+}
+
+
+//-----------------------------------------
+// Emphasis
+// For SEO usage.
+//-----------------------------------------
+em {
+	font-style: italic;
+}
+
+
+//-----------------------------------------
+// Italic
+//-----------------------------------------
+i {
+	font-style: italic;
+}
+
+
+//-----------------------------------------
+// Underlined
+//-----------------------------------------
+u {
+	text-decoration: underline;
+}
+
+
+//-----------------------------------------
+// Higher
+//-----------------------------------------
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	top: -0.5em;
+	vertical-align: baseline;
+}
+
+
+//-----------------------------------------
+// Lower
+//-----------------------------------------
+sub {
+	bottom: -0.25em;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+
+//-----------------------------------------
+// Small Print
+//-----------------------------------------
+small {
+	font-size: rem-calc(12);
+}
+
+
+//-----------------------------------------
+// Text Selection
+//-----------------------------------------
+::selection {
+	background: $color-primary;
+	color: $color-white;
+	text-shadow: none;
+}

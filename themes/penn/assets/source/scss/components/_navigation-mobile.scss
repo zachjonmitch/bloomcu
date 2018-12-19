@@ -1,0 +1,87 @@
+//--------------------------------------------------------------
+// NAVIGATION MOBILE
+//--------------------------------------------------------------
+.navigation-mobile {
+	background-color: transparent;
+	bottom: 0;
+	left: 0;
+	padding: 0 15px;
+	position: fixed;
+	right: 0;
+	z-index: 2000;
+
+	@include mq($mq-full) {
+		display: none;
+	}
+
+	.nav-active & {
+		background: $color-white;
+	}
+
+	&__list {
+		align-items: flex-end;
+		background-color: transparentize($color-white, 0.1);
+		border-radius: 15px 15px 0 0;
+		box-shadow: 0 0 8px 0 rgba(51,51,51,0.3);
+		display: flex;
+		justify-content: space-between;
+		overflow: hidden;
+		padding: 0 35px;
+		width: 100%;
+	}
+}
+
+
+//-----------------------------------------
+// Action Buttons
+//-----------------------------------------
+.navigation-mobile {
+	$self: &;
+
+	&__action {
+		position: relative;
+
+		&.is-active {
+			#{ $self }__slide {
+				transform: translateY(100%);
+			}
+		}
+
+		& > * {
+			pointer-events: none;
+		}
+	}
+
+	&__slide {
+		align-items: center;
+		color: $color-tertiary-medium;
+		display: flex;
+		flex-direction: column;
+		height: 72px;
+		overflow: hidden;
+		padding: 16px;
+		text-align: center;
+		transition: transform 400ms ease-in-out;
+
+		svg {
+			color: $color-primary;
+			font-size: rem-calc(20);
+		}
+
+		&--close {
+			background-color: $color-primary;
+			position: absolute;
+			top: -100%;
+
+			&,
+			svg {
+				color: $color-white;
+			}
+		}
+	}
+
+	&__action-title {
+		font-size: rem-calc(10);
+		padding-top: 8px;
+	}
+}

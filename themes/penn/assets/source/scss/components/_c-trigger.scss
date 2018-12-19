@@ -1,0 +1,89 @@
+//--------------------------------------------------------------
+// COMPONENT TRIGGER
+//--------------------------------------------------------------
+
+.c-trigger {
+	background-color: transparent;
+	border: 0;
+	color: $color-primary;
+	cursor: pointer;
+	display: inline-block;
+	font-family: $font-aktiv-grotesk-bold;
+	font-size: $font-size-content;
+	height: 60px;
+	overflow: visible;
+	right: 0;
+	top: 0;
+	transition-duration: 0.2s;
+	transition-property: background-color, filter;
+	transition-timing-function: linear;
+	width: 80px;
+
+	@include mq($mq-full) {
+		display: none;
+	}
+
+	&__icon-container {
+		display: inline-block;
+		position: relative;
+		width: 28px;
+	}
+
+	&__icon {
+		display: block;
+		top: 50%;
+		transition-duration: 0.1s;
+		transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+		&,
+		&::before,
+		&::after {
+			background-color: $color-primary;
+			height: 2px;
+			position: absolute;
+			transition-duration: 0.15s;
+			transition-property: transform;
+			transition-timing-function: ease;
+			width: 100%;
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+		}
+
+		&::before {
+			top: -9px;
+			transition: top 0.1s 0.14s ease,
+			opacity 0.1s ease;
+		}
+
+		&::after {
+			bottom: -9px;
+			transition: bottom 0.1s 0.14s ease,
+			transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+		}
+	}
+
+
+	&.is-active {
+		.c-trigger__icon {
+			transform: rotate(45deg);
+			transition-delay: 0.14s;
+			transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+			&::before {
+				opacity: 0;
+				top: 0;
+				transition: top 0.1s ease, opacity 0.1s 0.14s ease;
+			}
+
+			&::after {
+				bottom: 0;
+				transform: rotate(-90deg);
+				transition: bottom 0.1s ease, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+			}
+		}
+	}
+}

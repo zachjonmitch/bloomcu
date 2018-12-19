@@ -1,0 +1,155 @@
+//--------------------------------------------------------------
+// off canvas - modal
+//--------------------------------------------------------------
+.c-off-canvas {
+	background: $color-white;
+	height: 100vh;
+	opacity: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transform: translateX(100%);
+	transition: transform 500ms ease-out, opacity 0ms 500ms, visibility 500ms ease-out;
+	visibility: hidden;
+	width: 100%;
+	z-index: 10000;
+
+	@include mq($mq-full) {
+		box-shadow: 0 0 20px 0 rgba(0,0,0,0.75);
+		height: calc(100vh - 120px);
+		left: 50%;
+		max-width: 730px;
+		top: 60px;
+		transform: translate(-50%, -50px);
+		transition: transform 400ms ease-out, opacity 200ms ease-in, visibility 400ms ease-in;
+		width: 100%;
+	}
+
+	&.is-active {
+		opacity: 1;
+		transform: translateX(0);
+		transition: transform 500ms ease-out, visibility 500ms ease-out;
+		visibility: visible;
+
+		@include mq($mq-full) {
+			transform: translate(-50%, 0);
+		}
+	}
+
+	&--medium {
+		@include mq($mq-full) {
+			max-width: 1260px;
+		}
+	}
+
+	&--full-page {
+		height: 100vh;
+		left: 0;
+		right: 0;
+
+		@include mq($mq-full) {
+			height: 100vh;
+			max-width: 100vw;
+			top: 0;
+		}
+
+		&.is-active {
+			transform: translateX(0);
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Header
+//-----------------------------------------
+.c-off-canvas {
+	&__header {
+		align-items: flex-end;
+		display: flex;
+		justify-content: flex-end;
+		padding-left: 20px;
+
+		@include mq($mq-full) {
+			padding-left: 90px;
+		}
+	}
+
+	&__close {
+		align-items: center;
+		align-self: flex-start;
+		background-color: $color-white;
+		border: 2px solid $color-primary;
+		border-radius: 50%;
+		margin: 10px 10px 0 0;
+		padding: 0;
+		transition: background-color 200ms ease-in-out;
+
+		@include mq($mq-full) {
+			margin: 26px 36px 0 0;
+		}
+
+		&:hover,
+		&:focus {
+			background-color: $color-primary;
+
+			.c-off-canvas__close-icon {
+				&::before,
+				&::after {
+					background-color: $color-white;
+				}
+			}
+		}
+
+		&-icon {
+			align-items: center;
+			display: block;
+			height: 42px;
+			position: relative;
+			transform: rotate(45deg);
+			width: 42px;
+
+			&::before,
+			&::after {
+				background-color: $color-primary;
+				content: '';
+				display: block;
+				height: 2px;
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%);
+				width: 30px;
+			}
+
+			&::after {
+				transform: translate(-50%) rotate(-90deg);
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Content
+//-----------------------------------------
+.c-off-canvas {
+	&__content {
+		display: block;
+		height: calc(100vh - 70px); // window minus header
+		overflow: hidden;
+		overflow-y: scroll;
+		padding: 0 20px 75px;
+		width: 100%;
+
+		@include mq($mq-full) {
+			height: calc(100vh - 240px); // window minus header & modal spacing
+			padding: 0 90px 75px;
+		}
+	}
+
+	&__content-inner {
+		padding-top: 40px;
+		width: 100%;
+	}
+}

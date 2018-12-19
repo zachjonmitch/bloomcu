@@ -1,0 +1,191 @@
+//--------------------------------------------------------------
+// Base Gravity Styles
+//
+// if you find a gravity component you need to style
+// and it's not here
+// take the time to add some base styles to base theme master
+//--------------------------------------------------------------
+//-----------------------------------------
+// Normalize
+// Override any unwanted styles by wysiwyg-content.
+//-----------------------------------------
+.wysiwyg-content {
+	.gform_wrapper {
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			li {
+				margin: 0;
+				&:not(:last-child) {
+					margin: 0;
+				}
+			}
+		}
+		ul.gform_fields {
+			li.gfield {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+//-----------------------------------------
+// Inputs
+//-----------------------------------------
+.gform_wrapper {
+	&,
+	&.gf_browser_chrome {
+		select {
+			@extend %base-select;
+		}
+	}
+
+
+	textarea,
+	input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+		@extend %base-input;
+	}
+}
+
+
+//-----------------------------------------
+// Checkbox and Radio
+//-----------------------------------------
+.gform_wrapper ul.gfield_checkbox li input[type=checkbox]:checked + label,
+.gform_wrapper ul.gfield_radio li input[type=radio]:checked + label {
+	font-weight: inherit;
+}
+
+
+//-----------------------------------------
+// Submit
+//-----------------------------------------
+.gform_wrapper {
+	input[type=submit].button {
+		@extend .button;
+	}
+}
+
+//-----------------------------------------
+// Label
+//-----------------------------------------
+.gform_wrapper {
+	label.gfield_label {
+		@extend .h-visual-hide;
+	}
+}
+
+
+//-----------------------------------------
+// Date Picker
+//-----------------------------------------
+.ui-datepicker {
+	$self: &;
+
+	background: $color-white;
+	border: 1px solid $color-gray;
+	box-shadow: 3px 3px 4px transparentize(#000000, 0.8);
+	&-calendar {
+		margin-bottom: 0;
+		th,
+		td {
+			border: 1px solid $color-black;
+			padding: 5px;
+			text-align: center;
+		}
+		td {
+			background-color: lighten($color-gray, 10%);
+			transition: background-color 300ms;
+			&:focus,
+			&:hover {
+				background-color: lighten($color-gray, 18%);
+			}
+			&#{$self}-unselectable {
+				background-color: $color-white;
+			}
+		}
+	}
+}
+
+// controls
+.ui-datepicker-header {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.ui-datepicker {
+	&-prev,
+	&-next {
+		font-size: rem-calc(14);
+		padding: 5px;
+	}
+	&-prev {
+		width: 50%;
+	}
+	&-next {
+		text-align: right;
+		width: 50%;
+	}
+}
+
+// month select
+.ui-datepicker-title {
+	display: flex;
+	width: 100%;
+	select {
+		background-color: $color-gray;
+		border: 0;
+		display: inline-block;
+		margin: 5px 2px;
+		width: auto;
+	}
+}
+
+//-----------------------------------------
+// Visibility
+//-----------------------------------------
+.gf_hide_ampm {
+	.gfield_time_ampm {
+		display: none;
+	}
+}
+
+.gf_hide_charleft {
+	.charleft {
+		display: none;
+	}
+}
+
+//-----------------------------------------
+// Errors
+//-----------------------------------------
+.gfield_error {
+	border: 1px solid $color-gray;
+	border-left-color: $color-error;
+	border-left-width: 5px;
+	padding: 10px;
+	 > label,
+	.validation_message {
+		color: $color-error;
+	}
+	input,
+	textarea,
+	select {
+		border-color: $color-error;
+		&:focus {
+			border-color: darken($color-error, 10%);
+		}
+	}
+}
+
+//-----------------------------------------
+// Honeypot
+//-----------------------------------------
+// honeypot field, hide it from human beings
+.gform_validation_container {
+	display: none;
+	left: -9000px;
+	position: absolute;
+}

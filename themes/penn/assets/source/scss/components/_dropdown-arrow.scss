@@ -1,0 +1,42 @@
+//--------------------------------------------------------------
+// DROPDOWN ARROW
+// used by mega nav
+//--------------------------------------------------------------
+%nav-dropdown-arrow {
+	&::before,
+	&::after {
+		@include mq($mq-full) {
+			content: '';
+			display: block;
+			height: 0;
+			left: 50%;
+			pointer-events: none;
+			position: absolute;
+			top: 100%;
+			width: 0;
+		}
+	}
+
+	&::before {
+		@include mq($mq-full) {
+			background-color: transparent;
+			box-shadow: 0 0 8px 0 rgba(51,51,51,0.3);
+			height: 70px;
+			left: calc(50% + 32px);
+			transform: rotate(45deg) translate(-50%, 60px);
+			transform-origin: center;
+			width: 70px;
+		}
+	}
+
+	&::after {
+		@include mq($mq-full) {
+			border-bottom: 10px solid $color-secondary-light;
+			border-left: 15px solid transparent;
+			border-right: 15px solid transparent;
+			border-top: 5px solid transparent;
+			transform: translate(-50%, 0);
+			z-index: 501;
+		}
+	}
+}

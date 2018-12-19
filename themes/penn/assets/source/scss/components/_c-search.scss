@@ -1,0 +1,22 @@
+//--------------------------------------------------------------
+// SEARCH FORM
+//--------------------------------------------------------------
+.c-search {
+	&__title {
+		color: $color-tertiary;
+		font-family: $font-aktiv-grotesk-light;
+		margin-bottom: 45px;
+	}
+
+	&__input[type='search'] {
+		padding-bottom: 12px;
+
+		@include mq($mq-full) {
+			font-size: rem-calc(32);
+		}
+
+		&::placeholder {
+			color: transparentize($color-primary, 0.6);
+		}
+	}
+}

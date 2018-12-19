@@ -1,0 +1,14 @@
+//--------------------------------------------------------------
+// STATES
+//--------------------------------------------------------------
+
+// Prevent site from scrolling.
+.no-scroll {
+	height: 100%;
+	overflow: hidden;
+}
+
+// <body>
+.modal-active {
+	@extend .no-scroll;
+}

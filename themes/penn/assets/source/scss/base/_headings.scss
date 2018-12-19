@@ -1,0 +1,81 @@
+//--------------------------------------------------------------
+// HEADINGS
+//--------------------------------------------------------------
+
+.h1 {
+	font: {
+		family: $font-aktiv-grotesk-bold;
+		size: rem-calc(48);
+		weight: $font-weight-normal;
+	};
+	line-height: rem-calc(52);
+
+	@include mq($mq-full) {
+		font-size: rem-calc(84);
+		line-height: rem-calc(84);
+	}
+}
+
+.h2 {
+	font: {
+		family: $font-aktiv-grotesk-light;
+		size: rem-calc(36);
+		weight: $font-weight-normal;
+	};
+	line-height: rem-calc(48);
+
+	@include mq($mq-full) {
+		font-size: rem-calc(60);
+		line-height: rem-calc(72);
+	}
+}
+
+.h3 {
+	font: {
+		family: $font-family-heading;
+		size: rem-calc(28);
+		weight: $font-weight-normal;
+	};
+	line-height: rem-calc(44);
+
+	@include mq($mq-full) {
+		font-size: rem-calc(48);
+		line-height: rem-calc(54);
+	}
+}
+
+.h4 {
+	font: {
+		family: $font-family-heading;
+		size: rem-calc(24);
+		weight: $font-weight-normal;
+	};
+	line-height: rem-calc(30);
+
+	@include mq($mq-full) {
+		font-size: rem-calc(32);
+		line-height: rem-calc(40);
+	}
+}
+
+.h5 {
+	font: {
+		family: $font-family-heading;
+		size: rem-calc(20);
+		weight: $font-weight-normal;
+	};
+	line-height: rem-calc(28);
+
+	@include mq($mq-full) {
+		font-size: rem-calc(24);
+		line-height: rem-calc(28);
+	}
+}
+
+.h6 {
+	font: {
+		family: $font-aktiv-grotesk-light;
+		size: rem-calc(20);
+		weight: $font-weight-normal;
+	};
+}

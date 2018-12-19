@@ -1,0 +1,66 @@
+//--------------------------------------------------------------
+// HOMEPAGE CALL TO ACTION
+//--------------------------------------------------------------
+.c-callout-home {
+	background-color: $color-primary;
+	color: $color-white;
+	padding: 60px 20px 100px;
+
+	@include mq($mq-full) {
+		padding-bottom: 160px;
+		padding-top: 96px;
+	}
+
+	&__inner {
+		margin: 0 auto;
+		max-width: $global-width;
+		position: relative;
+
+		@include mq($mq-laptop) {
+			padding-left: 7%;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Title, Sub Title
+//-----------------------------------------
+.c-callout-home {
+	&__title {
+		font-family: $font-aktiv-grotesk-bold;
+		font-size: rem-calc(28);
+		margin-bottom: 33px;
+
+		@include mq($mq-full) {
+			font-size: rem-calc(60);
+			line-height: rem-calc(77);
+			margin-bottom: 55px;
+			max-width: 650px;
+		}
+	}
+
+	&__sub-title {
+		@include mq($mq-full) {
+			font-size: rem-calc(24);
+			max-width: 570px;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Link
+//-----------------------------------------
+.c-callout-home {
+	&__link {
+		margin-top: 20px;
+
+		@include mq($mq-full) {
+			bottom: 20px;
+			margin: 0;
+			position: absolute;
+			right: 0;
+		}
+	}
+}

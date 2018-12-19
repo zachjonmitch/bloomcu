@@ -1,0 +1,347 @@
+//Parent Page & Comparison Templates
+.page-template-page-parent, .page-template-page-comparison {
+    .compare-content-area {
+        padding: 30px 0 90px 0;
+    }
+    ._children {
+        margin-bottom: 90px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        .child_item {
+
+            .child-title {
+                color: $color-black;
+                //font-family: $font-buenos-regular; 
+                font-size: rem-calc(30);
+                text-transform: capitalize;
+                margin-bottom: 130px;
+            }
+            //background-color: $color-dark-moderate-blue;
+            color: $color-black;
+            padding: 35px 30px 30px 30px;
+            box-sizing: border-box;
+            flex-basis: 100%;
+            margin-bottom: 25px;
+            //height: auto;
+
+            @include mq($mq-tablet) {
+                flex-basis: 49%;
+            }
+            @include mq($mq-laptop) {
+                flex-basis: 32%;
+                //IE FIX
+                -ms-flex-preferred-size: 43.5%;
+                //height: 400px;
+               
+			}
+    
+            &:hover {
+                //background-color: $color-very-dark-desaturated-blue;
+                
+                // a {
+                //     //text-decoration: none;
+                //     color: $color-white;
+                // }
+            }
+
+            &--compare {
+                .h3 {
+                    font-size: 1.7rem;
+                    margin-bottom: 15px;
+                }
+                .child_description {
+                    margin-bottom: 25px;
+                }
+                @include mq($mq-laptop) {
+                    flex-basis: 49%;
+                    //IE FIX
+                    -ms-flex-preferred-size: 44%;
+                    font-size: 20px;
+
+                    
+                }
+            }
+        }
+    }
+}
+.page-template-page-parent, .page-template-page-comparison {
+    .product-card-title, .child-title {
+        padding-bottom: 30px;
+    }
+    .child_item {
+        //border: 3px solid $color-gray;
+        border-radius: 5px;
+    }
+}
+//SITEMAP
+.page-template-page-sitemap{
+    .list {
+        margin: 75px 0px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        .page_item_has_children, .page_item {
+            box-sizing: border-box;
+            flex-basis: 100%;
+            
+            @include mq($mq-tablet) {
+                flex-basis: 50%;
+            }
+            @include mq($mq-laptop) {
+                //IE FIX
+                -ms-flex-preferred-size: 43.5%;
+                //height: 400px;
+            
+            }
+        }
+    }
+}
+.g-l-wrapper {
+    max-width: 1140px;
+}
+
+// //Speedbump update
+.speedbump {
+    .c-off-canvas {
+        &__content {
+            &__inner {
+                width: 100%;
+                .modal-buttons {
+                    .stay {
+                        //color: $color-green;
+                        text-decoration: underline;
+                    }
+                }
+                @include mq($mq-tablet) {
+                    width: 70%;
+
+                    .modal-buttons {
+                        display: flex;
+                        justify-content: flex-start;
+                        flex-direction: row;
+
+                        .stay {
+                            margin-left: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// //speedbump 
+#modal-speedbump { 
+    .button--reset {
+        color: $color-blue;
+        background: #ffffff;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+// //Custom full width
+// .full-width {
+//     width: 100% !important;
+// }
+
+// //faq dropdown
+.accordion_button {
+    width: 100%;
+    text-align: left;        
+    margin: 0 auto;
+}
+.js-faqs-accordion {
+    .h2 {
+        padding-top: 50px;
+    }
+    .faq-item {
+        width: 100%;
+        .accordion_button {
+            width: 100%;
+            text-align: left;        
+            margin: 0 auto;
+        }
+    }
+    .c-feature-list__item {
+        .fa-angle-down {
+            //color: $color-green;
+            float: right;
+        }
+    }
+}
+
+// //table class
+// .table-title {
+//     font-size: rem-calc(25);
+//     padding: 30px 0 10px;
+// }
+
+// //FAQS archive
+.post-type-archive-faqs,
+.tax-faq-category {
+    
+    .article-content {
+        margin-top: 80px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-flow: row wrap;
+        
+        .js-faqs-accordion {
+            order: 2; 
+            box-sizing: border-box;
+            flex-basis: 100%;
+
+            @include mq($mq-tablet) {
+                flex-basis: 70%;
+                order: 1;
+            }
+            @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                flex-basis: 60%;
+            }
+            .c-tab-accordion__content {
+                margin-top: 15px;
+                padding: 0 5px 20px;
+            }
+            .c-product-faq__questions {
+                padding: 20px 0; 
+                li {
+                    padding-top: 20px;
+                    @include mq($mq-tablet) {
+                    padding-right: 60px;
+                    }
+                }
+            }
+            
+        }
+
+    
+    .category-list {
+        box-sizing: border-box;
+        flex-basis: 100%;
+        margin-bottom: 30px;
+        order: 1;
+        
+        @include mq($mq-tablet) {
+            order: 2;
+            flex-basis: 30%;
+        }
+
+        .category-list-title {
+            font-size: 18px;
+            text-transform: uppercase;
+            //color: $color-dark-moderate-blue;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+         ul {
+            li {
+                font-size: 18px;
+                padding: 10px 0;
+                display: inline-block;
+                margin: 10px;
+
+                    @include mq($mq-laptop) {
+                        display: block;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// //Tabs styling
+// .page-template-page-custom-tabs {
+    
+//     &.page-rates-fees {
+//         .table-wrapper {
+//             padding-bottom: 70px;
+//         }
+
+//         @include mq($mq-tablet, $min: false) {
+//             .g-l-wrapper {
+//                 padding: 0;
+//             }
+//         }
+//     }
+
+//     .g-page-header {
+//         margin-bottom: 0; 
+//     }
+//     // Accordions
+//     .c-tab-accordion {
+        
+//         &__tab-menu-list {
+//             background: $color-black;
+//         }
+//     }
+// }
+// //IE
+// @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+//     .g-page-header {
+//         .g-page-header__title {
+//             padding-top: 150px;
+//         }
+//     }
+// }
+
+//Default hero 
+
+.hero-product {
+
+    &.default-hero {
+        margin-bottom: 0;
+
+        .hero-product__banner {
+            .hero-product__banner-inner {
+                color: $color-blue;
+                font-size: rem-calc(28);
+                
+                @include mq($mq-laptop) {
+                    font-size: rem-calc(46);
+                }
+            }
+        }
+    } 
+}
+
+//Double column css 
+.page-template-page-custom-tabs {
+    a {
+        color: $color-blue;
+        &.button {
+            color: $color-white!important;
+        }
+    }
+    .row {
+        h2, h3, h4 , h5, h6 {
+            padding-bottom: 8px;
+        }
+        .large-12 {
+            
+            @include mq($mq-laptop) {
+                padding-left: 0;
+            }
+        }
+        // p {
+        //     color: $color-gray;
+        // }
+        margin-bottom: 90px;
+        &.contact-css {
+            p {
+                color: $color-gray;
+            }
+            
+            @include mq($mq-laptop) {
+                max-width: 100%;
+            }
+        }
+    }
+}

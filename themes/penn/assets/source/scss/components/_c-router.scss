@@ -1,0 +1,68 @@
+//--------------------------------------------------------------
+// ROUTER
+//--------------------------------------------------------------
+.c-router {
+	background-color: $color-white;
+	box-shadow: 0 4px 11px 4px rgba(0,0,0,0.19);
+	margin: 0 20px 40px;
+	max-width: $global-width;
+	padding: 20px 20px 16px;
+
+	@include mq($mq-global-width + 40px) {
+		margin: 0 auto 40px;
+	}
+}
+
+
+//-----------------------------------------
+// Title
+//-----------------------------------------
+.c-router {
+	&__title {
+		margin-bottom: 20px;
+	}
+}
+
+//-----------------------------------------
+// Router Items
+//-----------------------------------------
+.c-router {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -2px;
+	}
+
+	&__item {
+		margin: 0 2px 4px;
+		width: 100%;
+
+		@include mq($mq-full) {
+			flex-grow: 1;
+			width: calc(33% - 4px);
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Router Card
+//-----------------------------------------
+.c-router {
+	&__card {
+		align-items: center;
+		background-color: $color-secondary;
+		color: $color-primary;
+		display: block;
+		display: flex;
+		height: 220px;
+		justify-content: center;
+		min-height: 220px;
+		text-align: center;
+
+		&:hover,
+		&:focus {
+			background-color: darken($color-secondary, 10%);
+		}
+	}
+}

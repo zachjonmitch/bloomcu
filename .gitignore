@@ -1,0 +1,79 @@
+# //--------------------------------------------------------------
+# // GITIGNORE
+# //--------------------------------------------------------------
+
+# //-----------------------------------------
+# // File Types
+# //-----------------------------------------
+*.7z
+*._*
+*.bak
+*.bz2
+*.cvs
+*.db
+*.dmg
+*.gz
+*.idea
+*.iso
+*.jar
+*.log
+*.map
+*.pot
+*.rar
+*.sass-cache*
+*.svn
+*.swp
+*.tar
+*.tgz
+*.zip
+*~
+.DS_Store
+.htaccess
+.scssc
+error_log
+
+
+# //-----------------------------------------
+# // WordPress
+# //-----------------------------------------
+advanced-cache.php
+backup-db/
+backups/
+blogs.dir/
+cache-config.php
+cache/
+local-config.php
+logs/
+mu-plugins/*
+object-cache.php
+plugins/*
+tests/
+themes/twenty*/
+upgrade/
+uploads/
+wp-cache-config.php
+
+
+# //-----------------------------------------
+# // Track Certain Plugins
+# //-----------------------------------------
+!plugins/advanced-custom-fields-pro
+!plugins/gravityforms
+!plugins/wp-sync-db-master
+!plugins/advanced-custom-fields-table-field
+
+
+
+# //-----------------------------------------
+# // Theme
+# //-----------------------------------------
+dist/
+
+
+# //-----------------------------------------
+# // NPM, NODE, Config
+# //-----------------------------------------
+codekit-config.json
+compass_app_log.txt
+node_modules/
+themes/base/.cache

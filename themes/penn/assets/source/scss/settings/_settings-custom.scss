@@ -1,0 +1,102 @@
+//--------------------------------------------------------------
+// SETTINGS CUSTOM
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Global
+//-----------------------------------------
+$global-width: 1170px;
+$global-padding: 20px;
+
+
+//-----------------------------------------
+// Spacing
+//-----------------------------------------
+$spacing-section: 90px;
+$spacing-half: $spacing-section / 2;
+
+
+//-----------------------------------------
+// Media Queries
+//-----------------------------------------
+$mq-mobile-medium: 375px;
+$mq-mobile-large: 425px;
+$mq-medium: 640px;
+$mq-tablet: 768px;
+$mq-wpadmin: 783px;
+$mq-full: 960px;
+$mq-laptop: 1024px;
+$mq-global-width: $global-width;
+$mq-laptop-medium: 1335px;
+$mq-laptop-large: 1440px;
+$mq-retina: '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)';
+
+
+//-----------------------------------------
+// Fonts
+//-----------------------------------------
+$font-aktiv-grotesk-bold: 'Aktiv Grotesk Bold' sans-serif;
+$font-aktiv-grotesk-medium: 'Aktiv Grotesk Medium' sans-serif;
+$font-aktiv-grotesk-light: 'Aktiv Grotesk Light' sans-serif;
+
+// Family
+$font-family-body: $font-aktiv-grotesk-light;
+$font-family-heading: $font-aktiv-grotesk-medium;
+
+// Size
+$font-size-content: 18px;
+
+// Weight
+// Note: These need to match font weights of the fonts used.
+// @see functions/font.php
+$font-weight-normal: 400;
+
+
+//-----------------------------------------
+// Colors
+//-----------------------------------------
+
+// Base Neutrals
+$color-black: #000000;
+$color-white: #FFFFFF;
+$color-gray: #CACACA;
+
+// Theme Colors
+$color-blue: #005AE1;
+$color-dark-blue: #0A1E3F;
+$color-yellow: #F2C433;
+
+// Roles
+$color-primary: $color-blue;
+$color-primary-medium: #EDF2FA;
+$color-primary-light: #EDEDED;
+$color-secondary: $color-yellow;
+$color-secondary-medium: #F9E8C7;
+$color-secondary-light: #FCFCFA;
+$color-tertiary: $color-dark-blue;
+$color-tertiary-medium: #4D4D4D;
+$color-tertiary-light: #A6A6A6;
+$color-borders: $color-primary-light;
+
+// Alerts
+$color-error: #EA595E;
+$color-warning: #F0BD2B;
+$color-success: #59EA9D;
+
+
+//-----------------------------------------
+// Slick Carousel
+//-----------------------------------------
+$slick-font-path: '';
+$slick-font-family: '';
+$slick-loader-path: '';
+$slick-arrow-color: $color-white;
+$slick-dot-color: $color-black;
+$slick-dot-color-active: $slick-dot-color;
+$slick-prev-character: '\2190';
+$slick-next-character: '\2192';
+$slick-dot-character: '\2022';
+$slick-dot-size: 20px;
+$slick-opacity-default: 0.75;
+$slick-opacity-on-hover: 1;
+$slick-opacity-not-active: 0.25;

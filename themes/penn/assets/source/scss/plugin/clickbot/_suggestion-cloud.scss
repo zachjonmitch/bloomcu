@@ -1,0 +1,70 @@
+//--------------------------------------------------------------
+// SUGGESTION CLOUD
+//--------------------------------------------------------------
+.clickbot-app > .clickbot-container {
+	//-----------------------------------------
+	// Main
+	//-----------------------------------------
+	.clickbot-cloud {
+	}
+
+
+	//-----------------------------------------
+	// Prompt
+	//-----------------------------------------
+	.clickbot-cloud__prompt {
+		 > * {
+			font-family: $font-aktiv-grotesk-medium;
+			font-size: rem-calc(34);
+
+			@include mq($mq-full) {
+				font-size: rem-calc(40);
+			}
+		}
+
+		a {
+			color: $color-primary;
+		}
+	}
+
+
+	//-----------------------------------------
+	// Options Container
+	//-----------------------------------------
+	.clickbot-cloud__options-list {
+	}
+
+
+	//-----------------------------------------
+	// Options
+	//-----------------------------------------
+	.clickbot-cloud__option {
+	}
+
+	.clickbot-cloud__label {
+		background-color: $color-primary;
+		border-color: $color-primary;
+		color: $color-white;
+		transition: background-color 200ms ease-in;
+
+		&:hover,
+		&:focus {
+			color: $color-primary;
+		}
+	}
+
+
+	//-----------------------------------------
+	// Controls
+	//-----------------------------------------
+	.clickbot-cloud__controls {
+	}
+
+	.clickbot-cloud__controls-action {
+		margin: 0 20px;
+	}
+
+	.clickbot-cloud__controls-icon {
+		color: $color-primary;
+	}
+}

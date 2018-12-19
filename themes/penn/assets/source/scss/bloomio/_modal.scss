@@ -1,0 +1,101 @@
+
+/*
+--------------------------------------------------------------
+CUSTOM MODAL 
+--------------------------------------------------------------
+*/
+
+//--------------------------------------------------------------
+// MODAL OVERLAY
+//--------------------------------------------------------------
+
+.modal-overlay {
+	// background-color: rgba($color-black, 0.35);
+	bottom: 0;
+	display: none;
+	height: 100%;
+	left: 0;
+	min-height: 100%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 4;
+
+	&--gradient {
+		background: linear-gradient(180deg, #535353 0%, rgba(126,126,126,0) 100%);
+		z-index: 0;
+	}
+
+	&.is-visible {
+		display: block;
+	}
+}
+//--------------------------------------------------------------
+// MODAL
+//--------------------------------------------------------------
+.c-modal {
+	// background-color: $color-white;
+	box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, .11);
+	display: none;
+	top: 50%;
+	left: 50%;
+	margin: 0 auto;
+	max-width: 870px;
+	max-height: 100vh;
+	overflow-y: visible;
+	position: fixed;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	z-index: 2000; //in-front of header
+	padding: 20px 50px;
+	overflow: auto;
+
+	&.is-active {
+		display: block;
+	}
+	.modal-header {
+		width: 80%;
+	}
+}
+
+
+//-----------------------------------------
+// Inner
+//-----------------------------------------
+.c-modal {
+	a {
+        background: rgba( $color-black, 0) !important;
+        color: $color-primary;
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+        &:focus {
+            background: rgba( $color-black, 0) !important;
+            color: $color-secondary;
+        }
+    }
+
+	&__inner {
+		padding: 50px;
+		position: relative;
+	}
+}
+
+.modal-buttons  {
+	text-align: center;
+}
+//-----------------------------------------
+// Close
+//-----------------------------------------
+.c-modal {
+	&__close {
+		position: absolute;
+		right: 23px;
+		top: 23px;
+
+		&:focus {
+			// outline: 1px dotted $color-primary;
+		}
+	}
+}

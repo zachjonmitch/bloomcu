@@ -1,0 +1,141 @@
+//--------------------------------------------------------------
+// FORMS
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Label
+//-----------------------------------------
+label {
+	color: $color-tertiary-light;
+	display: block;
+	font-family: $font-aktiv-grotesk-medium;
+	font-size: $font-size-content;
+}
+
+//-----------------------------------------
+// Base Inputs
+//-----------------------------------------
+input[type='color'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time']
+input[type='url'],
+input[type='week'],
+textarea,
+%base-input {
+	background-color: $color-white;
+	border: 0;
+	border-bottom: 3px solid $color-primary-light;
+	border-radius: 0;
+	color: $color-black;
+	display: block;
+	font-family: $font-aktiv-grotesk-medium;
+	font-size: rem-calc(21);
+	margin: 0 0 15px;
+	padding: 5px 0 3px;
+	width: 100%;
+
+	@include mq($mq-full) {
+		font-size: rem-calc(26);
+	}
+
+	&::placeholder {
+		color: $color-tertiary-light;
+	}
+}
+
+[type='number'] {
+	-moz-appearance: textfield;
+
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+}
+
+
+//-----------------------------------------
+// Select
+//-----------------------------------------
+select,
+%base-select {
+	appearance: none;
+	background-color: $color-white;
+	background-image: url(../images/angle-down-light.svg);
+	background-position: 100% center;
+	background-repeat: no-repeat;
+	background-size: 30px 30px;
+	border: 0;
+	border-bottom: 3px solid $color-primary-light;
+	border-radius: 4px;
+	color: $color-black;
+	display: block;
+	font-family: $font-aktiv-grotesk-medium;
+	font-size: rem-calc(26);
+	margin: 0 0 15px;
+	padding: 15px 0;
+	width: 100%;
+
+	// Focus state
+	&:focus {
+	}
+
+	// Hide the dropdown arrow shown in newer IE versions
+	&::-ms-expand {
+		display: none;
+	}
+
+	&[multiple] {
+		background-image: none;
+		height: auto;
+	}
+}
+
+
+//-----------------------------------------
+// Checkbox / Radio
+//-----------------------------------------
+[type='radio'] {
+	margin-right: 12px;
+	transform: translateY(-2px);
+}
+
+[type='checkbox'] + label,
+[type='radio'] + label {
+	color: $color-black;
+	display: inline-block;
+	font-family: $font-aktiv-grotesk-light;
+	font-size: rem-calc(16);
+	margin: 0;
+	vertical-align: baseline;
+
+	&[for] {
+		cursor: pointer;
+	}
+}
+
+
+//-----------------------------------------
+// File
+//-----------------------------------------
+[type='file'] {
+	width: 100%;
+}
+
+
+//-----------------------------------------
+// Submit
+//-----------------------------------------
+[type='submit'],
+[type='button'] {
+	margin: 0;
+}

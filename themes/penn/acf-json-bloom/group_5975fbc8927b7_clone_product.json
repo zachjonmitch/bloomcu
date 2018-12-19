@@ -1,0 +1,47 @@
+{
+    "key": "group_5975fbc8927b7_clone_product",
+    "title": "Clone - Product",
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1509630886,
+    "fields": [
+        {
+            "key": "field_5975fbc85fb9c",
+            "label": "Product",
+            "name": "product",
+            "type": "post_object",
+            "value": null,
+            "instructions": "Select a product.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "product-cards"
+            ],
+            "taxonomy": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        }
+    ]
+}

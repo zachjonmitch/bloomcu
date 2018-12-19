@@ -1,0 +1,120 @@
+//--------------------------------------------------------------
+// BUTTONS
+//--------------------------------------------------------------
+// @see https://codepen.io/tylercwats/pen/NOvLwm
+// button.js controls the hover effect
+
+.button {
+	--x: 0;
+	--y: 0;
+	appearance: none;
+	background-color: $color-primary;
+	border: 1px solid transparent;
+	border-radius: 100px;
+	color: $color-white;
+	display: inline-block;
+	position: relative;
+	font-family: $font-aktiv-grotesk-medium;
+	font-size: rem-calc(24);
+	line-height: 1;
+	margin: 0;
+	overflow: hidden;
+	padding: 6px 20px 8px;
+	text-align: center;
+	text-decoration: none;
+	transition: background-color 0.25s ease-out, color 0.25s ease-out;
+	transition: opacity 400ms ease, box-shadow 400ms ease;
+	width: auto;
+	z-index: 1;
+
+	&::before {
+		// On hover this will grow to become radial hover effect
+		// that will follow cursor.
+		--size: 0;
+		content: '';
+		position: absolute;
+		left: var(--x);
+		top: var(--y);
+		width: var(--size);
+		height: var(--size);
+		transform: translate(-50%, -50%);
+		transition: width .2s ease, height .2s ease;
+		// background controls the color of the hover shape.
+		background: radial-gradient(circle closest-side, #0028AD, transparent);
+		z-index: -1;
+	}
+
+	@include mq($mq-full) {
+		box-shadow: 0 2px 4px 0 rgba(51,51,51,0.30);
+		font-size: rem-calc(32);
+		padding: 11px 50px 14px;
+	}
+
+	&:hover::before {
+		// Set the size of the hover effect.
+		--size: 50px;
+
+		@include mq($mq-full) {
+			--size: 200px;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		// If css variables are not supported, fallback to an opacity change.
+		opacity: 0.8;
+
+		@supports(--css: variables) {
+			opacity: 1;
+		}
+
+		@include mq($mq-full) {
+			box-shadow: 0 4px 12px 0 rgba(51,51,51,0.40);
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Modifiers
+//-----------------------------------------
+.button {
+	&--yellow {
+		background-color: $color-secondary;
+
+		&::before {
+			background: radial-gradient(circle closest-side, #E0AE2D, transparent);
+		}
+	}
+
+	&--light {
+		background-color: $color-white;
+		color: $color-primary;
+
+		&::before {
+			background: radial-gradient(circle closest-side, #E1EAFA, transparent);
+		}
+	}
+
+	&--secondary {
+		border-radius: 10px;
+		padding: 15px 10px;
+
+		@include mq($mq-full) {
+			padding: 23px 50px;
+		}
+	}
+
+	&--secondary-sm {
+		@include mq($mq-full) {
+			padding: 15px 50px;
+		}
+	}
+
+	&--full-width {
+		display: block;
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}
+}

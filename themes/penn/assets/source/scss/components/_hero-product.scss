@@ -1,0 +1,186 @@
+//--------------------------------------------------------------
+// FRONT PAGE HERO
+//--------------------------------------------------------------
+.hero-product {
+	margin-bottom: 90px;
+
+	@include mq(1040px) {
+		margin-bottom: 325px;
+	}
+}
+
+
+//-----------------------------------------
+// Image Spacer
+//-----------------------------------------
+.hero-product {
+	&__image {
+		background-color: #EDF2FA;
+		height: 80px;
+		position: relative;
+
+		@include mq(1040px) {
+			height: 70vh;
+			max-height: 385px;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Banner containing Title and CTA link
+//-----------------------------------------
+.hero-product {
+	&__banner {
+		background-color: #EDF2FA;
+		padding: 0 0 25px;
+		padding-bottom: 88px;
+		position: relative;
+
+		@include mq(1040px) {
+			padding-bottom: 175px;
+		}
+	}
+
+	&__banner-max {
+		position: relative;
+	}
+
+	&__calc {
+		background: $color-white;
+		border-radius: 10px;
+		box-shadow: 0 0 8px 0 rgba(51,51,51,0.3);
+		max-width: 500px;
+		min-height: 780px;
+		position: absolute;
+		width: 100%;
+		z-index: 5;
+
+		@include mq(1040px) {
+			right: 20px;
+			top: -222px;
+		}
+		@include mq(1040px, $min: false) {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		@include mq(540px, $min: false) {
+			max-width: 90%;
+		}
+	}
+
+	&__banner-inner {
+		position: relative;
+
+		@include mq(1040px) {
+			max-width: 50%;
+		}
+
+		h1,
+		h2,
+		h3 {
+			color: $color-primary;
+			font-family: $font-aktiv-grotesk-light;
+			font-weight: 300;
+
+			@include mq($mq-medium) {
+				font-size: 3.75rem;
+				line-height: 4.5rem;
+			}
+		}
+
+		p {
+			display: none;
+			font-size: 24px;
+
+			@include mq(1040px) {
+				display: block;
+			}
+		}
+	}
+
+	&__title {
+		font-weight: 300;
+		max-width: 300px;
+		padding-right: 75px;
+		transform: translateY(-36px);
+
+		@include mq($mq-medium) {
+			max-width: 725px;
+		}
+		@include mq(1040px) {
+			transform: translateY(-58px);
+		}
+	}
+
+	&__product-name {
+		display: block;
+		font-family: $font-aktiv-grotesk-medium;
+		margin-bottom: 60px;
+
+		@include mq(1040px) {
+			display: none;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Bottom Section
+//-----------------------------------------
+.hero-product {
+	&__bottom {
+		padding: 0 20px;
+		position: relative;
+
+		@include mq(1040px, $min: false) {
+			height: 700px;
+		}
+
+		&::before {
+			background-color: $color-white;
+			bottom: 0;
+			content: '';
+			height: 100%;
+			left: 0;
+			perspective: 1000px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transform-origin: 0;
+
+			@include mq(1040px) {
+				transform: translateZ(0) skewY(-3deg);
+			}
+		}
+	}
+
+	&__bottom-inner {
+		margin: 0 auto;
+		max-width: $global-width;
+		padding-top: 110px;
+		position: relative;
+
+		@include mq(1040px) {
+			padding-top: 130px;
+		}
+	}
+
+	&__description {
+		color: $color-tertiary-medium;
+		position: relative;
+		width: 80%;
+		z-index: 1;
+
+		@include mq(1040px) {
+			padding-left: 70px;
+			width: 58%;
+		}
+
+		p {
+			@include mq($mq-medium) {
+				font-size: rem-calc(24);
+			}
+		}
+	}
+}

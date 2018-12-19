@@ -1,0 +1,146 @@
+//--------------------------------------------------------------
+// LEFT RIGHT
+//--------------------------------------------------------------
+
+.c-left-right {
+	background: $color-white;
+	margin: 0 auto;
+	max-width: 1440px;
+	position: relative;
+
+	@include mq($mq-full) {
+		display: flex;
+	}
+
+	&--layout-full {
+		max-width: 100%;
+	}
+}
+
+
+//-----------------------------------------
+// Image
+//-----------------------------------------
+.c-left-right {
+	&__image-wrap {
+		height: 400px;
+		min-width: 100%;
+		position: relative;
+
+		@include mq($mq-full) {
+			height: 100%;
+			position: absolute;
+		}
+	}
+
+	&__image {
+		background-position: center;
+		background-size: cover;
+		bottom: 0;
+		left: 0;
+		min-height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 100%;
+
+		&--left,
+		&--right {
+			@include mq($mq-full) {
+				width: 50%;
+			}
+		}
+
+		&--left {
+			@include mq($mq-full) {
+				left: 0;
+				right: initial;
+			}
+		}
+
+		&--right {
+			@include mq($mq-full) {
+				left: initial;
+				right: 0;
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Inner Content Wrapper
+//-----------------------------------------
+.c-left-right {
+	&__inner {
+		@include clearfix;
+
+		margin: 0 auto;
+		max-width: $global-width + 40px;
+		padding: 10px 20px 80px;
+		position: relative;
+		width: 100%;
+		z-index: 1;
+
+		@include mq($mq-full) {
+			padding: 35px 20px 100px;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Left & Right Content Panels
+//-----------------------------------------
+.c-left-right {
+	&__content {
+		@include mq($mq-full) {
+			display: flex;
+			height: 100%;
+			margin-top: 0;
+			width: 50%;
+		}
+
+		&:not(:first-child) {
+			margin-top: 66px;
+
+			@include mq($mq-full) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__content--left {
+		@include mq($mq-full) {
+			float: left;
+		}
+	}
+
+	&__content--right {
+		@include mq($mq-full) {
+			float: right;
+			padding-left: 110px;
+		}
+	}
+
+	// Inner Wrapper
+	&__content-inner {
+		width: 100%;
+
+		&--left {
+		}
+
+		&--right {
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Link
+//-----------------------------------------
+.c-left-right {
+	&__link {
+		margin-top: 20px;
+	}
+}

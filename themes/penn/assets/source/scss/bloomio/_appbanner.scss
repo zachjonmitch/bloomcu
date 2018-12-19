@@ -1,0 +1,57 @@
+#app-banner {
+	background:#fff;
+	width:100%;
+	position:relative;
+	top:0;
+	z-index:9999;
+    border-bottom: 1px solid grey;    
+    height: auto;
+    transition: all 1.0s linear;
+    height: 100px;
+
+    .columns{
+        height: 100px;
+        text-align: center;
+        vertical-align: middle;
+        display: table;
+        @include mq($mq-medium) {
+            height: 80px;
+        }
+
+        a {
+            display: table-cell;
+            vertical-align: middle;            
+            &.view-app {
+                text-transform: uppercase;
+                color: #B81618;
+            }
+        }
+        &.close {
+            font-size: 20px;
+            padding: 0;
+        }
+        &.app-details {
+            text-align:left;
+            padding: 10px 0;
+            font-size: 12px;
+            display: table-cell;
+            vertical-align: middle;
+            // p{
+                
+            //     @include breakpoint($mq-medium) {
+            //         padding:20px 0;   
+            //     }
+            // }
+            img {
+                float: left;
+                height: 80px;
+                padding-right: 10px;
+
+            }
+        
+        }
+    }
+    &.scrolled {
+        position: fixed;
+    }
+}

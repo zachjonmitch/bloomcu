@@ -1,0 +1,87 @@
+//--------------------------------------------------------------
+// NAVIGATION LOGIN
+//--------------------------------------------------------------
+.navigation-login {
+	display: flex;
+	flex-direction: column;
+
+	@include mq($mq-full) {
+		flex-direction: row-reverse;
+	}
+}
+
+
+//-----------------------------------------
+// Login Form
+//-----------------------------------------
+.navigation-login {
+	&__form-wrapper {
+		@include mq($mq-full) {
+			padding: 40px 60px 20px;
+			width: 460px;
+		}
+	}
+
+	&__form-title {
+		color: $color-tertiary;
+		font-size: rem-calc(22);
+	}
+
+	&__form {
+		margin-top: 85px;
+	}
+
+	&__field {
+		&:not(:last-child) {
+			margin-bottom: 78px;
+		}
+
+		&:last-child {
+			input {
+				margin-bottom: 12px;
+			}
+		}
+	}
+
+	&__forgot-password {
+		color: transparentize($color-primary, 0.6);
+		font-family: $font-aktiv-grotesk-medium;
+	}
+
+	&__submit {
+		margin-top: 60px;
+	}
+
+	&__register {
+		color: $color-primary;
+		display: inline-block;
+		font-family: $font-aktiv-grotesk-medium;
+		margin-top: 45px;
+	}
+}
+
+
+//-----------------------------------------
+// Notice
+//-----------------------------------------
+.navigation-login {
+	&__notice {
+		color: $color-tertiary-medium;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100%;
+		padding: 20px 0 50px;
+
+		@include mq($mq-full) {
+			background-color: $color-primary-medium;
+			padding: 50px 40px 50px 50px;
+			width: 430px;
+		}
+
+		&-title {
+			font-family: $font-aktiv-grotesk-light;
+			margin-bottom: 40px;
+		}
+	}
+}

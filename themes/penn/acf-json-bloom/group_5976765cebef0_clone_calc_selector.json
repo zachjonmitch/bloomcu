@@ -1,0 +1,52 @@
+{
+    "key": "group_5976765cebef0_clone_calc_selector",
+    "title": "Clone - Calculator Select",
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1509630886,
+    "fields": [
+        {
+            "key": "field_59767686db78a",
+            "label": "Calculator Select",
+            "name": "calculator_select",
+            "type": "select",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Select Calculator": "Select Calculator",
+                "custom": "Custom",
+                "savings-calculator": "Savings Calculator",
+                "loan-calculator": "Loan Calculator"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ]
+}

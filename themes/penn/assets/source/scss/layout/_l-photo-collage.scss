@@ -1,0 +1,46 @@
+//--------------------------------------------------------------
+// PHOTO COLLAGE
+//--------------------------------------------------------------
+.l-photo-collage {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto 100px;
+	max-width: 1010px;
+	padding: 10px 20px 0;
+
+	@include mq($mq-full) {
+		padding-top: 43px;
+	}
+
+	&__photo {
+		background-color: $color-white;
+		box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.3);
+		filter: grayscale(100%);
+		position: relative;
+
+		&--top {
+			align-self: flex-end;
+			height: 170px;
+			width: 68%;
+
+			@include mq($mq-medium) {
+				height: 400px;
+			}
+		}
+
+		&--bottom {
+			height: 141px;
+			margin-top: -20px;
+			width: 47%;
+
+			@include mq($mq-medium) {
+				height: 316px;
+				margin-top: -75px;
+			}
+			@include mq($mq-tablet) {
+				margin-left: 10%;
+				width: 41.5%;
+			}
+		}
+	}
+}

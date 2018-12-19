@@ -1,0 +1,60 @@
+//--------------------------------------------------------------
+// HEADER
+//--------------------------------------------------------------
+
+.g-header {
+	background-color: $color-white;
+	position: relative;
+	z-index: 500;
+
+	.nav-active & {
+		@include mq($mq-full, true, false) {
+			left: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	&__container {
+		margin: 0 auto;
+		max-width: 1440px;
+		padding: 0 20px;
+
+		@include mq($mq-full) {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&__navigation {
+		display: flex;
+		flex-grow: 1;
+		flex-wrap: wrap-reverse;
+		justify-content: flex-end;
+	}
+}
+
+
+//-----------------------------------------
+// Logo
+//-----------------------------------------
+.logo-primary {
+	padding: 15px 0;
+
+	a {
+		display: block;
+	}
+
+	svg {
+		display: block;
+		height: auto;
+		max-height: 75px;
+		max-width: 227px;
+		width: 100%;
+
+		@include mq($mq-full) {
+			max-width: 280px;
+		}
+	}
+}

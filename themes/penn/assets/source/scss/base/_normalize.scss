@@ -1,0 +1,350 @@
+//--------------------------------------------------------------
+// NORMALIZE
+// @see https://necolas.github.io/normalize.css/7.0.0/normalize.css
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Global Resets
+//-----------------------------------------
+* {
+	box-sizing: border-box;
+}
+
+@viewport {
+	width: device-width;
+}
+
+
+//-----------------------------------------
+// HTML5 Elements
+//-----------------------------------------
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+
+
+//-----------------------------------------
+// Normalize
+//-----------------------------------------
+html {
+	font-size: 100%;
+	-webkit-tap-highlight-color: transparent;
+	text-size-adjust: 100%;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	min-width: 320px;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+}
+
+figcaption {
+	line-height: normal;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+progress {
+	vertical-align: baseline;
+}
+
+template,
+[hidden] {
+	display: none;
+}
+
+a {
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+}
+
+pre {
+	overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace;
+	font-size: 1em;
+}
+
+b,
+strong {
+	font-weight: inherit;
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+dfn {
+	font-style: italic;
+}
+
+mark {
+	background-color: #FFFF00;
+	color: #000000;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+hr {
+	border: 0;
+	height: 0;
+}
+
+
+//-----------------------------------------
+// Input
+//-----------------------------------------
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='search'],
+input[type='submit'],
+input[type='password'],
+input[type='reset'],
+input[type='button'],
+button,
+textarea {
+	appearance: none;
+}
+
+input,
+button,
+select,
+textarea,
+optgroup {
+	color: inherit;
+	font: inherit;
+	-webkit-font-smoothing: antialiased;
+	line-height: normal;
+}
+
+input,
+button,
+select,
+textarea {
+	border-radius: 0;
+	box-sizing: border-box;
+	margin: 0;
+	outline: 0;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	height: auto;
+}
+
+select {
+	&:-moz-focusring {
+		color: transparent;
+		text-shadow: 0 0 0 #000000;
+	}
+}
+
+legend {
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	white-space: normal;
+}
+
+textarea {
+	overflow: auto;
+	resize: none;
+}
+
+optgroup {
+	font-weight: bold;
+}
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+	cursor: pointer;
+	overflow: visible;
+}
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+
+//-----------------------------------------
+// Reset Margin Padding
+//-----------------------------------------
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
+}
+
+img {
+	border-style: none;
+	height: auto;
+	-ms-interpolation-mode: bicubic;
+	max-width: 100%;
+}
+
+iframe,
+video,
+embed {
+	max-height: 100%;
+	max-width: 100%;
+}

@@ -1,0 +1,338 @@
+//--------------------------------------------------------------
+// WYSIWYG CONTENT
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Default
+//-----------------------------------------
+.wysiwyg-content {
+	& >  {
+		// Hide empty WordPress injected <p> tags.
+		*:empty:not(hr):not(br) {
+			display: none;
+		}
+
+		// Remove top margin from first element (whether element or image).
+		*:first-child {
+			margin-top: 0;
+
+			& > img {
+				margin-top: 0;
+			}
+		}
+
+		.wp-image-wrap:nth-child(2) img {
+			margin-top: 0;
+		}
+
+		// Remove bottom margin from last element (whether element or image).
+		*:last-child {
+			margin-bottom: 0;
+
+			& > img {
+				margin-bottom: 0;
+			}
+		}
+
+		.wp-image-wrap:nth-last-child(2) img {
+			margin-bottom: 0;
+		}
+	}
+
+	// Responsive Media
+	.responsive-embed {
+		margin: 24px auto;
+		max-width: none;
+		width: auto !important;
+
+		@include mq($mq-full) {
+			margin: 60px auto;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Headings
+//-----------------------------------------
+.wysiwyg-content {
+	h1 {
+		@extend .h1;
+
+		margin-bottom: 20px;
+	}
+
+	h2 {
+		@extend .h2;
+
+		margin-bottom: 15px;
+	}
+
+	h3 {
+		@extend .h3;
+	}
+
+	h4 {
+		@extend .h4;
+	}
+
+	h5 {
+		@extend .h5;
+	}
+
+	h6 {
+		@extend .h6;
+	}
+}
+
+
+//-----------------------------------------
+// Paragraph
+//-----------------------------------------
+.wysiwyg-content {
+	p {
+		margin-bottom: 12px;
+
+		@include mq($mq-full) {
+			margin-bottom: 24px;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// List
+//-----------------------------------------
+.wysiwyg-content {
+	ul,
+	ol,
+	dl {
+		margin-bottom: 24px;
+		margin-top: 24px;
+
+		@include mq($mq-full) {
+			margin-bottom: 32px;
+			margin-top: 32px;
+		}
+	}
+
+	// Unordered List
+	ul {
+	}
+
+	// Ordered List
+	ol {
+		counter-reset: item;
+		padding-left: 0;
+		padding-right: 13px;
+
+		@include mq($mq-full) {
+			padding-right: 26px;
+		}
+	}
+
+	// Definition List
+	dl {
+		padding-left: 0;
+		padding-right: 2em;
+
+		@include mq($mq-full) {
+			padding-right: 3em;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// List Item
+//-----------------------------------------
+.wysiwyg-content {
+	// Unordered List Item
+	ul {
+		li {
+			color: $color-primary;
+			font-family: $font-aktiv-grotesk-medium;
+			font-size: rem-calc(22);
+			list-style-type: none;
+			margin-bottom: 26px;
+			padding-left: 43px;
+			position: relative;
+
+			@include mq($mq-full) {
+				font-size: rem-calc(30);
+				margin-bottom: 33px;
+				padding-left: 63px;
+			}
+
+			&::before {
+				background: url(../images/list-check.svg) no-repeat;
+				background-position: center;
+				background-size: 28px 28px;
+				content: '';
+				height: 28px;
+				left: 0;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 28px;
+
+				@include mq($mq-full) {
+					background-size: 33px 33px;
+					height: 33px;
+					width: 33px;
+				}
+			}
+		}
+	}
+
+	// Ordered List Item
+	ol {
+		li {
+			counter-increment: item;
+			list-style-type: none;
+			padding-left: 40px;
+			position: relative;
+
+			&:not(:last-child) {
+				margin-bottom: 30px;
+			}
+
+			&::before {
+				color: $color-primary;
+				content: counter(item);
+				font-family: $font-aktiv-grotesk-bold;
+				left: 0;
+				position: absolute;
+				top: 0;
+			}
+		}
+	}
+
+	// Definition List
+	dl {
+		// Definition Term
+		dt {
+		}
+
+		// Definition Name
+		dd {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Blockquote
+//-----------------------------------------
+.wysiwyg-content {
+	blockquote {
+		& > p {
+			color: $color-tertiary-medium;
+			font-size: rem-calc(28);
+
+			@include mq($mq-full) {
+				font-size: rem-calc(48);
+			}
+		}
+
+		cite {
+			color: $color-primary;
+			font-size: rem-calc(20);
+
+			@include mq($mq-full) {
+				font-size: rem-calc(24);
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Cite
+//-----------------------------------------
+.wysiwyg-content {
+	cite {
+		color: $color-primary;
+		display: block;
+
+		&::before {
+			content: '\2014 \0020';
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Horizontal Rule
+//-----------------------------------------
+.wysiwyg-content {
+	hr {
+		margin: 24px auto;
+	}
+}
+
+
+//-----------------------------------------
+// Table
+//-----------------------------------------
+.wysiwyg-content {
+	table {
+	}
+}
+
+
+//-----------------------------------------
+// Form
+//-----------------------------------------
+.wysiwyg-content {
+	form {
+	}
+}
+
+
+//-----------------------------------------
+// Anchor
+//-----------------------------------------
+.wysiwyg-content {
+	a {
+		&:not(.button) {
+			color: $color-primary;
+		}
+
+		&:hover,
+		&:focus {
+			&:not(.button) {
+				color: $color-primary;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Button
+//-----------------------------------------
+.wysiwyg-content {
+	.button {
+		margin-bottom: 20px;
+
+		@include mq($mq-full) {
+			margin-bottom: 38px;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Image
+//-----------------------------------------
+.wysiwyg-content {
+	img {
+		display: block;
+		height: auto;
+		line-height: 0;
+		width: auto;
+	}
+}

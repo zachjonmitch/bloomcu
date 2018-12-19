@@ -1,0 +1,22 @@
+//--------------------------------------------------------------
+// Modal Overlay
+//--------------------------------------------------------------
+.c-modal-overlay {
+	animation: base-fade-in 200ms ease-in both;
+	background-color: transparentize($color-black, 0.5);
+	bottom: 0;
+	display: none;
+	left: 0;
+	min-height: 100%;
+	min-width: 100%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 10;
+
+	.modal-active & {
+		@include mq($mq-full) {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,145 @@
+//--------------------------------------------------------------
+// SECONDARY NAVIGATION
+//--------------------------------------------------------------
+.navigation-secondary {
+	position: relative;
+	z-index: 2000;
+
+	@include mq($mq-full) {
+		display: flex;
+	}
+
+	&__item {
+		align-items: center;
+		display: flex;
+		position: relative;
+	}
+
+	&__action {
+		$self: &;
+
+		align-content: center;
+		align-items: center;
+		display: none;
+		height: 100%;
+		padding: 15px 25px;
+		text-align: center;
+
+		@include mq($mq-full) {
+			display: flex;
+		}
+		@include mq($mq-laptop-medium) {
+			flex-direction: column;
+			justify-content: center;
+			padding: 0 25px;
+		}
+
+		&:focus {
+			outline: 1px dotted $color-primary;
+		}
+
+		&:focus,
+		&:hover {
+			svg {
+				color: lighten($color-primary, 14%);
+			}
+		}
+
+		&.is-active {
+			@extend %nav-dropdown-arrow;
+
+			background-color: $color-primary;
+
+			&::before {
+				@include mq($mq-full) {
+					top: calc(100% - 26px);
+				}
+			}
+
+			&::after {
+				@include mq($mq-full) {
+					bottom: 8px;
+					top: initial;
+				}
+			}
+
+			svg,
+			#{ $self }-title {
+				color: $color-white;
+			}
+		}
+
+		svg {
+			color: $color-primary;
+			font-size: rem-calc(20);
+			margin: 0 10px 0 0;
+
+			@include mq($mq-laptop-medium) {
+				font-size: rem-calc(24);
+				margin: 0 0 14px 0;
+			}
+		}
+
+		&-title {
+			color: $color-tertiary-medium;
+			display: block;
+			font-family: $font-aktiv-grotesk-medium;
+			font-size: rem-calc(10);
+			opacity: 0.8;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Dropdowns
+//-----------------------------------------
+.navigation-secondary {
+	&__dropdown {
+		display: none;
+
+		@include mq($mq-full, true, false) {
+			background: $color-white;
+			bottom: 0;
+			height: 100%;
+			height: calc(100vh - 152px);
+			left: 0;
+			overflow: scroll;
+			padding: 0 20px;
+			position: fixed;
+			right: 0;
+			top: 80px;
+			z-index: 100;
+		}
+		@include mq($mq-full) {
+			background-color: $color-secondary-light;
+			border-radius: 5px;
+			box-shadow: 0 0 8px 0 rgba(51,51,51,0.3);
+			overflow: hidden;
+			position: absolute;
+			right: -9px;
+			top: calc(100% - 8px);
+			z-index: 5;
+		}
+
+		&.is-active {
+			display: block;
+		}
+
+		&--search {
+			@include mq($mq-full) {
+				height: 480px;
+				max-height: calc(100vh - 100px);
+				padding: 40px 60px;
+			}
+
+			form {
+				width: 100%;
+
+				@include mq($mq-full) {
+					width: 510px;
+				}
+			}
+		}
+	}
+}

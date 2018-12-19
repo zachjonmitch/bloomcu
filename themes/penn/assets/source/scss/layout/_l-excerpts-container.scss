@@ -1,0 +1,46 @@
+//--------------------------------------------------------------
+// EXCERPTS CONTAINER
+//--------------------------------------------------------------
+.l-excerpts-container {
+	margin: 0 auto 130px;
+	max-width: $global-width + 30px;
+
+	@include mq($mq-full) {
+		margin: 0 auto 80px;
+	}
+
+	&__list {
+		position: relative;
+		width: 100%;
+
+		@include mq($mq-tablet) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&__item {
+		flex-grow: 1;
+		margin: 0 20px 25px;
+		width: calc(100% - 30px);
+
+		@include mq($mq-full) {
+			margin: 0 15px 30px;
+
+			&:exactly(2) {
+				width: calc(50% - 30px);
+			}
+
+			&:exactly(3),
+			&:between(5, 6) {
+				width: calc(33.3333% - 30px);
+			}
+
+			&:exactly(4),
+			&:between(7, 8) {
+				width: calc(25% - 30px);
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+<?php
+/**
+ * Analytics
+ *
+ * @package Base
+ */
+
+?>
