@@ -134,15 +134,15 @@ module.exports = env => {
 					comments: !isProduction,
 				},
 			}),
-			new BrowserSyncPlugin(
-				{
-					proxy: `http://${devUrl}`,
-					host: 'localhost',
-					port: 3000,
-					files: ['**/*.js', '**/*.css', '**/*.php'],
-					injectChanges: true,
-				},
-			),
+			//new BrowserSyncPlugin(
+			//	{
+			//		proxy: `http://${devUrl}`,
+			//		host: 'localhost',
+			//		port: 3000,
+			//		files: ['**/*.js', '**/*.css', '**/*.php'],
+			//		injectChanges: true,
+			//	},
+			//),
 			new CopyWebpackPlugin([
 				// @see https://www.npmjs.com/package/copy-webpack-plugin
 				{
