@@ -6,7 +6,7 @@
 
 ## Download
 Download this repository at:
-`git clone git@bitbucket.org:bloomcu/project-penn.git`
+`git clone https://bitbucket.org/bloomcu/project-penn.git wp-content`
 
 
 ## Build Tools
