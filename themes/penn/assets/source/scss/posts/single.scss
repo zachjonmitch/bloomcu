@@ -1,0 +1,74 @@
+.post-content {
+  max-width: 890px;
+  margin: 0 auto;
+  margin-bottom: 200px;
+
+  p {
+    margin-bottom: 50px;
+    opacity: .7;
+  }
+
+  &__heading {
+    font-weight: 400;
+    margin-bottom: 20px;
+    margin-top: 80px;
+  }
+  
+  &__lead {
+    font-size: 1.8rem;
+    font-weight: 200;
+    margin: 40px 0 70px 0;
+    color: $color-primary;
+  }
+  
+  &__image--left {
+    max-width: 750px;
+    margin-left: 0;
+    margin-top: 60px;
+    @include mq(600px, true, false) {
+			max-width: 100%;
+		}
+  }
+
+  .caption {
+    opacity: .6;
+    font-size: .95rem;
+    padding-top: 10px;
+    max-width: 700px;
+  }
+
+  &__btn {
+    background: $color-primary;
+    border-radius: 30px;
+    color: white;
+    font-size: 25px;
+    padding: 10px 40px;
+    margin-top: 50px;
+  }
+  @include mq(600px, true, false) {
+    width: 90%;
+  }
+}
+
+.post-hero {
+  margin-bottom: 0;
+}
+
+.hero-post__title {
+  color: #fff;
+  font-family: Aktiv Grotesk Bold,sans-serif;
+  font-size: 4.625rem;
+  font-weight: 700;
+  line-height: 5.25rem;
+  max-width: 725px;
+  padding-right: 75px;
+  padding-top: 12px;
+  position: absolute;
+  top: -70px;
+  z-index: 9999;
+  @include mq(600px, true, false) {
+    font-size: 2.0rem;
+    line-height: 1.7;
+    top: 0;
+  }
+}

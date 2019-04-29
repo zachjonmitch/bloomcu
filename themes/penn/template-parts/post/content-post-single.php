@@ -4,9 +4,29 @@
  *
  * @package Base
  */
-
 ?>
 
+<?php get_template_part( 'template-parts/single-post/hero' ); ?>
+
+<div class="post-content">
+
+	<?php while ( have_posts() ) : the_post(); ?>
+		<?php if ( get_the_content() ) : ?>
+
+			<article id="post-<?php the_ID(); ?>" <?php post_class( 'wysiwyg-content' ); ?>>
+				<div class="post-content__meta">
+					<p><?php echo 'Posted by ' . get_the_author_nickname() . ' on ' . get_the_date(); ?></p>
+				</div>
+				<?php the_content(); ?>
+			</article>
+
+		<?php endif; ?>
+	<?php endwhile; ?>
+
+</div>
+
+
+<?php /*
 <div class="g-l-wrapper g-l-wrapper--large">
 	<ul class="breadcrumbs">
 		<li class="blog-home"><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Blog Home</a></li>
@@ -48,3 +68,4 @@
 		<?php endwhile; ?>
 	</div>
 </div>
+*/ ?>
